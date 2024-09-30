@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+    <div id="profile">
+        <h2>Profile Details</h2>
+        <div id="profile-info">
+            <p><strong>Username:</strong> {{request.user}}</p>
+            <p><strong>Email:</strong> {{request.user.email}}</p>
+            <div id="profile-actions">
+                <a href="{% url 'eprofile' user.id %}" id="edit-profile">Edit Profile</a>
+                <a href="{% url 'upassword' user.id %}" id="change-password">Change Password</a>
+                <a href="{% url 'dprofile' %}" id="delete-profile">Delete Profile</a>
+                <a href="{% url 'logout_' %}" id="user-logout">Logout</a>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock content %}

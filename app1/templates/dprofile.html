@@ -1,0 +1,14 @@
+
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+    <div id="delete-user">
+        <h2>Are You Sure Youn Want To Delete Profile?</h2>
+        <a href="{% url 'ddelete' user.id %}" class="delete-btn">Delete</a>
+        <a href="{% url 'profile' %}" id="dback-btn" >Back</a>
+    </div>
+
+
+{% endblock content %}

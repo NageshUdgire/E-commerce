@@ -1,0 +1,30 @@
+
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+
+    <div id="checkout-heading">
+        <h2>Checkout Details</h2>
+    </div>
+
+    <div id="checkout">
+
+        <form action="" method="POST" id="checkout-form">
+
+            {% csrf_token %}
+
+                {{CheckoutForm}}
+
+            <input type="submit" value="place order">
+
+
+        </form>
+
+
+    </div>
+
+
+{% endblock content %}
+

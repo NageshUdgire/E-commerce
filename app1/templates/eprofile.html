@@ -1,0 +1,36 @@
+
+
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+
+    <div id="ewrap">
+        <div id="eprofile">
+
+            <h1>Edit Pofile</h1>
+
+            <form action="" method="POST" id="epform">
+
+
+                {% csrf_token %}
+
+                <label for="">Username</label>
+                <input type="text" name="username" value="{{request.user}}">
+
+                <label for="">Email</label>
+                <input type="text" name="email" value="{{request.user.email}}">
+
+
+                <input type="submit" value="update" id="epsubmit">
+                <a href="{% url 'profile' %}" id="ep-back-btn">Back</a>
+
+
+            </form>
+
+        </div>
+    </div>
+
+
+{% endblock content %}

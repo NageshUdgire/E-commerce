@@ -1,0 +1,47 @@
+
+
+
+<nav>
+
+    <div id="logo">
+        <h2>SHOPIFY</h2>
+    </div>
+
+
+    {% if request.user.is_authenticated %}
+
+    <div id="nav-links">
+
+        <a href="{% url 'home' %}">HOME</a>
+
+        <form action="">
+            <input type="submit" value="TRENDING" name="trending" class="nav-button">
+        </form>
+
+        <a href="{% url 'cart' %}">CART({{count}})</a>
+        <a href="{% url 'profile' %}">PRFOFILE({{request.user}})</a>
+        <a href="{% url 'logout_' %}">LOG OUT</a>
+        <a href="{% url 'aboutus' %}">ABOUT US</a>
+        <a href="{% url 'contactus' %}">CONTACT US</a>
+    </div>
+
+
+    {% else %}
+
+    <div id="nav-links">
+
+        <a href="{% url 'home' %}">HOME</a>
+
+        <form action="">
+            <input type="submit" value="TRENDING" class="nav-button">
+        </form>
+        <a href="{% url 'login_' %}">LOG IN</a>
+        <a href="{% url 'register' %}">REGISTER</a>
+        <a href="{% url 'contactus' %}">CONTACT US</a>
+
+    </div>
+    {% endif %}
+
+
+
+</nav>

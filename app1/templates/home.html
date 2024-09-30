@@ -1,0 +1,75 @@
+
+
+{% extends 'main.html' %}
+
+
+
+{% block content %}
+
+    <div class="home">
+
+        <div class="home-links">
+
+            <a id="all-link" href="{% url 'home' %}">All</a>
+
+            <form action="">
+
+                <input id="trending-form" type="submit" name="trending" value="TRENDING">
+
+            </form>
+
+            <form action="">
+
+                <input id="offer-form" type="submit" name="offer" value="OFFER">
+
+            </form>
+
+            <form action="">
+
+                {% for i in categorylinks %}
+
+
+                    <input type="submit" name="cat" value="{{i}}">
+
+
+                {% endfor %}
+
+                <form id="search-form" action="">
+
+                    <input type="text" id="search-box" placeholder="search..." name="q">
+                    <input type="submit" id="search-button" value="search">
+                </form>
+
+
+            </form>
+
+
+        </div>
+
+        <div class="products">
+
+            {% if norec %}
+            <p>{{norec}}</p>
+            {% endif %}
+            {% for i in all %}
+
+            <div class="card">
+                <h3>{{off}}</h3>
+                <img src="{{i.image.url}}" alt="">
+                <h3>{{i.name}}</h3>
+                <h3>{{i.desc}}</h3>
+                <h3>Rs : {{i.price}}</h3>
+                <a href="{% url 'addcart' i.id %}">Add To Cart</a>
+            </div>
+
+
+            {% endfor %}
+
+
+        </div>
+
+
+    </div>
+
+
+{% endblock content %}

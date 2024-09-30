@@ -1,0 +1,33 @@
+
+
+{% extends 'main.html' %}
+
+
+
+{% block content %}
+
+
+        <div id="wrap">
+            <div id="login-container">
+                <h2>Login Page</h2>
+                <form method="POST" id="login-from">
+
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                      <label for="" >Username</label>
+                      <input type="text" name="username">
+                    </div>
+                    <div class="mb-3">
+                      <label>Password</label>
+                      <input type="password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <h4>If not register <a href="{% url 'register' %}" id="register-link">Register</a></h4>
+                  </form>
+            </div>
+        </div>
+
+
+
+{% endblock content %}

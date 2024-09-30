@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+
+    <center id="cart1">
+
+
+        <h1>Cart Details</h1>
+
+        {% if noitem %}
+
+            <h2>No items in the cart</h2>
+
+        {% endif %}
+
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Name</th>
+                <th scope="col">Desc</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total Price</th>
+                <th scope="col">Remove Item</th>
+            </tr>
+            </thead>
+
+            {% for i in c %}
+
+
+            <tbody>
+              <tr>
+                <td>{{i.category}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.desc}}</td>
+                <td>{{i.price}}</td>
+                <td>{{ i.quantity }}</td>
+                <td>{{i.totalprice}}</td>
+                <td><a href="{% url 'remove' i.id %}">Remove</a></td>
+            </tr>
+
+            {% endfor %}
+            </tbody>
+
+
+          </table>
+
+          <div id="total-amount">
+            <h2 id="amount">Total Amount : {{totalamount}}</h2>
+            <a href="{% url 'checkout' %}">Checkout</a>
+          </div>
+
+
+    </center>
+
+
+{% endblock content %}
+
