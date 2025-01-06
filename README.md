@@ -1,0 +1,1 @@
+Welcome to the repository for my e-commerce website! This application is a user-friendly platform designed to provide seamless online shopping experiences, featuring functionalities such as user authentication, product management, cart operations, and order processing.
